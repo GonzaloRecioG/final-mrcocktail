@@ -1,4 +1,12 @@
-<h1>Doses#new</h1>
-<p>Find me in app/views/doses/new.html.erb</p>
+<h1><%="Dose for " + @cocktail.name %></h1>
+<p>Add a dose to this cocktail.</p>
 
+<%= form_for [@cocktail, @dose] do |f| %>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  <%= f.label :ingredient %>
+  <%#= f.association :ingredient %>
+  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%= f.submit "Submit" %>
 
+<% end %>
