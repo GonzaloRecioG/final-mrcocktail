@@ -1,0 +1,17 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<p><%= @cocktail.created_at%></p>
+
+ <h3>Ingredients:</h3>
+
+<% @cocktail.doses.each do |dose| %>
+<ul>
+<li><%= dose.description + "of " %> <%= dose.ingredient.name %> <%= link_to 'Delete dose', cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }%></li>
+</ul>
+<% end %>
+
+<p><%= link_to 'Add dose', new_cocktail_dose_path(@cocktail) %></p>
+
+<%# attention: because the destroy is also nested, I had to pass two params to the route DELETE:
+- the cocktail ID and the dose ID %>

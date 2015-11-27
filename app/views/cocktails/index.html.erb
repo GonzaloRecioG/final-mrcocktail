@@ -1,0 +1,16 @@
+<h1>Cocktails#index</h1>
+<p>Find me in app/views/cocktails/index.html.erb</p>
+
+<% if @cocktails.empty? %>
+  <p>You have no Cocktails yet. Why not <%= link_to 'Add a new one', new_cocktail_path %>?</p>
+  <% else %>
+<!-- loop in cocktails array and display the cocktails -->
+  <% @cocktails.each do |cocktail| %>
+    <div>
+      <p><%= cocktail.name %> <%= link_to 'Show details', cocktail_path(cocktail) %>
+        <%= link_to 'Add dose', new_cocktail_dose_path(cocktail) %></p>
+    </div>
+  <% end %>
+  <p><%= link_to 'Add new cocktail', new_cocktail_path %></p>
+
+<% end %>
