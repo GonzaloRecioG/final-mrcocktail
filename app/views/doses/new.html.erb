@@ -6,7 +6,9 @@
   <%= f.text_field :description %>
   <%= f.label :ingredient %>
   <%#= f.association :ingredient %>
-  <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  <%= f.select :ingredient_id, Ingredient.all.collect { |ingredient| [ingredient.name, ingredient.id]} %>
+ <!-- another way to do f.select <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %> -->
+
   <%= f.submit "Submit" %>
 
 <% end %>
