@@ -9,6 +9,7 @@
 <ul>
 <li><%= dose.description + "of " %> <%= dose.ingredient.name %> <%= link_to 'Delete dose', cocktail_dose_path(@cocktail, dose), method: :delete, data: { confirm: "Are you sure?" }%></li>
 </ul>
+<%= image_tag @cocktail.picture.url(:medium) %>
 <% end %>
 
 <p><%= link_to 'Add dose', new_cocktail_dose_path(@cocktail) %></p>

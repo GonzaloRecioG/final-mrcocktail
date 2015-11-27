@@ -7,6 +7,9 @@ gem 'puma',           group: :production
 gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'figaro'
+gem 'aws-sdk', '< 2.0'
+gem 'paperclip'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
