@@ -1,11 +1,11 @@
 <h1>Cocktails#new</h1>
 <p>Find me in app/views/cocktails/new.html.erb</p>
 
-<%= form_for (@cocktail, html: { multipart: true }) do |f| %>
+<%= form_for @cocktail do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
+  <br>
   <%= f.label :picture %>
   <%= f.file_field :picture %>
   <%= f.submit "Submit" %>
-
 <% end %>
